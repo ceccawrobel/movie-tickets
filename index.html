@@ -8,5 +8,34 @@
     <title>Movie Tickets</title>
   </head>
   <body>
+    <div class="container" id="inputs">
+      <h3>Fill out the form below to find out how much it's gonna cost you to go to the movies!</h3>
+      <form id="userInfo">
+        <label for="userAge">How old are you?</label>
+        <select id="userAge">
+          <option value="youth">Under 18</option>
+          <option value="adult">18 or over</option>
+        </select>
+        <br>
+        <label for="userTime">When do you want to go?</label>
+        <select id="userTime">
+          <option value="early">matinee</option>
+          <option value="late">evening</option>
+        </select>
+        <br>
+        <label for="userMovieType">Which type of movie are you wanting to see?</label>
+        <select id="userMovieType">
+          <option value="first">New Release</option>
+          <option value="second">Second Run</option>
+        </select>
+        <br>
+        <button type="submit" class="btn-warning">submit</button>
+
+        <div id="userPrice">
+          [this is where the price will go]
+        </div>
+
+      </form>
+    </div>
   </body>
 </html>
