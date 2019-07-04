@@ -1,3 +1,11 @@
-#userPrice {
+#userPriceResult {
+  display: none;
+}
+
+#userSnacksResult {
+  display: none;
+}
+
+#userTotalResult {
   display: none;
 }
