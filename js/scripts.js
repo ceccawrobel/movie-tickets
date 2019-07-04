@@ -1,32 +1,44 @@
 // business logic
 
-function Ticket() {
+function Ticket(age, time, movieType) {
   this.age = age;
   this.time = time;
   this.movieType = movieType;
 }
 
-// Ticket.prototype.price = function() {
-//   this.price = 10
-// }
+Ticket.prototype.price = function() {
+  var userPrice = 10
+  if (this.age === "youth") {
+    userPrice -= 2
+  }
+  if (this.time === "early") {
+    userPrice -= 3
+  }
+  if (this.movieType === "second") {
+    userPrice -= 2
+  }
 
-//do this prototype^ instead of all these objects-->
-//..and finish it by writing branching statements to calculate "minus 2 for youth" etc
+  alert(userPrice)
+}
 
-// var youthEarlyFirst = new Ticket("youth", "early", "first")
-// var youthEarlySecond = new Ticket("youth", "early", "second")
-// var youthLateFirst = new Ticket("youth", "late", "first")
-// var youthLateSecond = new Ticket("youth", "late", "second")
-// var adultEarlyFirst = new Ticket("adult", "early", "first")
-// var adultEarlySecond = new Ticket("adult", "early", "second")
-// var adultLateFirst = new Ticket("adult", "late", "first")
-// var adultLateSecond = new Ticket("adult", "late", "second")
 
+//
+// do this prototype^ instead of all these objects-->
+// ..and finish it by writing branching statements to calculate "minus 2 for youth" etc
 
 
 // user interface logic
 
 $(document).ready(function() {
-var userAge =
-var userTicket = new Ticket(userAge, userTime, userMovieType)
+
+  $("#userInfo").submit(function(event) {
+    event.preventDefault();
+    console.log("submit happened");
+    var userAge = $("#userAge").val();
+    var userTime = $("#userTime").val();
+    var userMovieType = $("#userMovieType").val();
+    var userTicket = new Ticket(userAge, userTime, userMovieType);
+    userTicket.price()
+  })
+
 })
